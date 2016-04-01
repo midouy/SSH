@@ -100,7 +100,7 @@ public class SshUser implements java.io.Serializable {
     @JsonIgnoreProperties(value={"sshUsers", "sshAuthorities"})
     @ManyToMany(fetch = FetchType.LAZY)
     @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-    @JoinTable(name = "ssh_user_role", catalog = "work", joinColumns = { @JoinColumn(name = "user_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) })
+    @JoinTable(name = "ssh_user_role", catalog = "ssh", joinColumns = { @JoinColumn(name = "user_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) })
     public Set<SshRole> getSshRoles() {
         return this.sshRoles;
     }

@@ -68,7 +68,7 @@ public class SshRole implements java.io.Serializable {
     }
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "ssh_user_role", catalog = "work", joinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "user_id", nullable = false, updatable = false) })
+    @JoinTable(name = "ssh_user_role", catalog = "ssh", joinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "user_id", nullable = false, updatable = false) })
     public Set<SshUser> getSshUsers() {
         return this.sshUsers;
     }
@@ -78,7 +78,7 @@ public class SshRole implements java.io.Serializable {
     }
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "ssh_role_authority", catalog = "work", joinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "authority_id", nullable = false, updatable = false) })
+    @JoinTable(name = "ssh_role_authority", catalog = "ssh", joinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "authority_id", nullable = false, updatable = false) })
     public Set<SshAuthority> getSshAuthorities() {
         return this.sshAuthorities;
     }

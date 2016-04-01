@@ -67,7 +67,7 @@ public class SshAuthority implements java.io.Serializable {
     }
 
     @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name = "ssh_role_authority", catalog = "work", joinColumns = { @JoinColumn(name = "authority_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) })
+    @JoinTable(name = "ssh_role_authority", catalog = "ssh", joinColumns = { @JoinColumn(name = "authority_id", nullable = false, updatable = false) }, inverseJoinColumns = { @JoinColumn(name = "role_id", nullable = false, updatable = false) })
     public Set<SshRole> getSshRoles() {
         return this.sshRoles;
     }
